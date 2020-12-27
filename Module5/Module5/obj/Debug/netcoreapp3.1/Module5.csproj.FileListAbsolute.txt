@@ -1,0 +1,13 @@
+D:\VS_Projects\Module5\Module5\Module5\bin\Debug\netcoreapp3.1\Module5.exe
+D:\VS_Projects\Module5\Module5\Module5\bin\Debug\netcoreapp3.1\Module5.deps.json
+D:\VS_Projects\Module5\Module5\Module5\bin\Debug\netcoreapp3.1\Module5.runtimeconfig.json
+D:\VS_Projects\Module5\Module5\Module5\bin\Debug\netcoreapp3.1\Module5.runtimeconfig.dev.json
+D:\VS_Projects\Module5\Module5\Module5\bin\Debug\netcoreapp3.1\Module5.dll
+D:\VS_Projects\Module5\Module5\Module5\bin\Debug\netcoreapp3.1\Module5.pdb
+D:\VS_Projects\Module5\Module5\Module5\obj\Debug\netcoreapp3.1\Module5.csprojAssemblyReference.cache
+D:\VS_Projects\Module5\Module5\Module5\obj\Debug\netcoreapp3.1\Module5.AssemblyInfoInputs.cache
+D:\VS_Projects\Module5\Module5\Module5\obj\Debug\netcoreapp3.1\Module5.AssemblyInfo.cs
+D:\VS_Projects\Module5\Module5\Module5\obj\Debug\netcoreapp3.1\Module5.csproj.CoreCompileInputs.cache
+D:\VS_Projects\Module5\Module5\Module5\obj\Debug\netcoreapp3.1\Module5.dll
+D:\VS_Projects\Module5\Module5\Module5\obj\Debug\netcoreapp3.1\Module5.pdb
+D:\VS_Projects\Module5\Module5\Module5\obj\Debug\netcoreapp3.1\Module5.genruntimeconfig.cache
