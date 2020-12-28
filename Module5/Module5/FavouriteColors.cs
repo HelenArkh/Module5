@@ -11,21 +11,38 @@ namespace Module5
         {
             string[] favcolors = new string[3];
 
-            for (int i=0;i<favcolors.Length;i++)
+            (string name, int age) anketa;
+
+            Console.Write("Enter your name: ");
+            anketa.name = Console.ReadLine();
+
+            Console.Write("Enter your age: ");
+            anketa.age = Convert.ToInt32(Console.ReadLine());
+
+           for (int i=0;i<favcolors.Length;i++)
             {
-                favcolors[i] = ShowColor();
+                favcolors[i] = ShowColor(anketa.name, anketa.age);
             }
 
-            foreach (var item in favcolors)
+            ShowColors(anketa.name);
+
+          /* foreach (var item in favcolors)
             {
                 Console.WriteLine(item);
+            } */
+        }
+
+        static void ShowColors(string userName, params string[] favcolors)
+        {
+            Console.WriteLine("{0}, ваши любимые цвета:", userName);
+            foreach (var color in favcolors)
+            {
+                Console.WriteLine(color);
             }
         }
-        
-        
-        static string ShowColor()
+        static string ShowColor(string userName, int userage)
         {
-            Console.WriteLine("Напишите свой любимый цвет на английском с маленькой буквы");
+            Console.WriteLine("{0}, {1} лет\nНапишите свой любимый цвет на английском с маленькой буквы", userName, userage); 
             var colour = Console.ReadLine();
 
             switch (colour)
