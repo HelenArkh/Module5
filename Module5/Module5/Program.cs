@@ -4,8 +4,21 @@ namespace Module5
 {
     class Program
     {
+        static int num1 = 667;
+
         static void Main(string[] args)
         {
+            Console.WriteLine(num1);
+
+            Console.WriteLine(Sum());
+
+            if(num1>0)
+            {
+                var num3 = 5;
+
+                Console.WriteLine(num1 + num3);
+            }
+
             //Introduction.Task1();
             // FavouriteColors.MyFavcolors();
 
@@ -13,10 +26,10 @@ namespace Module5
             GetArrayFromConsole(ref razm); */
             // ShowArray(array, true);
 
-            string name = "Евгения";
-            GetName(out name);
+           // string name = "Евгения";
+            //GetName(out name);
              // ChangeName(ref name);
-              Console.WriteLine(name);
+             // Console.WriteLine(name);
 
             //  int age = 33;
               //ChangeAge(age);
@@ -28,6 +41,13 @@ namespace Module5
 
             Console.WriteLine(arr[0]); */
 
+        }
+
+        static int Sum()
+        {
+            var num1 = 0;
+            var num2 = 1;
+            return num1 - num2;
         }
 
         static void BigDataOperation(int[] arr, in int data)
@@ -70,7 +90,7 @@ namespace Module5
             var temp = array;
            if(sort)
             {
-               temp = SortArray(array);
+            //   temp = SortArray(array);
             }
             
             foreach (var item in temp)
