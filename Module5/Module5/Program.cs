@@ -8,16 +8,18 @@ namespace Module5
 
         static void Main(string[] args)
         {
-            Console.WriteLine(num1);
 
-            Console.WriteLine(Sum());
+            Recursion.UseEcho();
+            // Console.WriteLine(num1);
 
-            if(num1>0)
+           // Console.WriteLine(Sum());
+
+          /*  if(num1>0)
             {
                 var num3 = 5;
 
                 Console.WriteLine(num1 + num3);
-            }
+            } */
 
             //Introduction.Task1();
             // FavouriteColors.MyFavcolors();
