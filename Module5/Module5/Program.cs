@@ -4,12 +4,17 @@ namespace Module5
 {
     class Program
     {
-        static int num1 = 667;
 
         static void Main(string[] args)
         {
 
-            Recursion.UseEcho();
+            (string, string, int, bool, int, string[], int, string[]) userData = GetUserData();
+            ShowData(userData);
+            
+            
+            //Console.WriteLine(Recursion.Factorial(20));
+
+            //Recursion.UseEcho();
             // Console.WriteLine(num1);
 
            // Console.WriteLine(Sum());
@@ -44,6 +49,151 @@ namespace Module5
             Console.WriteLine(arr[0]); */
 
         }
+
+        static (string name, string surname, int age, bool hasPet, int countOfPets, string[] petNames, int countOfFavColors, string[] favColors) GetUserData()
+        {
+
+            (string name, string surname, int age, bool hasPet, int countOfPets, string[] petNames, int countOfFavColors, string[] favColors) User;
+
+            Console.WriteLine("Введите имя");
+            User.name = Console.ReadLine();
+
+            Console.WriteLine("Введите фамилию");
+            User.surname = Console.ReadLine();
+
+            string infAge;
+            int intage;
+            do
+            {
+                Console.WriteLine("Введите возраст цифрами:");
+                infAge = Console.ReadLine();
+            } while (CheckInput(infAge, out intage)==false);
+
+            User.age = intage;
+
+            Console.WriteLine("Есть ли у Вас животные? Да или Нет");
+            string answer = Console.ReadLine();
+
+            if (answer == "Да")
+            {
+                //проверить, что будет если да или ДА
+                User.hasPet = true;
+
+                Console.WriteLine("А сколько у Вас животных? ");
+                string infPetCount;
+                int intPetCount;
+                do
+                {
+                    Console.WriteLine("Введите количество цифрами:");
+                    infPetCount = Console.ReadLine();
+                } while (CheckInput(infPetCount, out intPetCount)==false);
+
+                User.countOfPets = intPetCount;
+
+                User.petNames = GetPetNames(User.countOfPets);                
+
+            }
+            else
+            {
+                User.hasPet = false;
+                User.countOfPets = 0;
+                User.petNames = Array.Empty<string>();
+            }
+
+            Console.WriteLine("Сколько у Вас любимых цветов?");
+            string infFavColorCount;
+            int intFavColorCount;
+            do
+            {
+                Console.WriteLine("Введите количество цифрами:");
+                infFavColorCount = Console.ReadLine();
+            } while (CheckInput(infFavColorCount, out intFavColorCount)==false);
+
+            User.countOfFavColors = intFavColorCount;
+
+            User.favColors = GetFavColors(User.countOfFavColors);
+            
+            return User;
+        }
+
+        static string[] GetPetNames(int countOfPets)
+        {
+            string[] petNames = new string[countOfPets];
+
+            for (int i = 0; i < petNames.Length; i++)
+            {
+                Console.Write("Введите имя {0} питомца: ", i + 1);
+                petNames[i] = Console.ReadLine();
+            }
+
+            return petNames;
+        }
+
+        static string[] GetFavColors(int countOfFavColors)
+        {
+            string[] favColors = new string[countOfFavColors];
+
+            for (int i = 0; i < favColors.Length; i++)
+            {
+                Console.Write("Введите любимый цвет номер {0}: ", i + 1);
+                favColors[i] = Console.ReadLine();
+            }
+
+            return favColors;
+        }
+
+        static bool CheckInput(string number, out int corrnumber)
+        {           
+            if(int.TryParse(number, out int intnum))
+            {
+                if(intnum>0)
+                {
+                    corrnumber = intnum;
+                    return true;
+                }
+            }
+            {
+                corrnumber = 0;
+                return false;
+            }
+        }
+
+        static void ShowData((string name, string surname, int age, bool hasPet, int countOfPets, string[] petNames, int countOfFavColors, string[] favColors) cortege)
+        {
+            Console.WriteLine(); //пустая строка между введением данных и результатами
+            Console.WriteLine("Имя пользователя: {0}", cortege.name);
+
+            Console.WriteLine("Фамилия пользователя: {0}", cortege.surname);
+
+            Console.WriteLine("Возраст пользователя: {0}", cortege.age);
+
+            if (cortege.hasPet)
+            {
+                Console.WriteLine("Есть {0} питомцев", cortege.countOfPets);
+                Console.WriteLine("Питомцев зовут:");
+
+                foreach(var item in cortege.petNames)
+                {
+                    Console.WriteLine(item);
+                }
+            }
+            else
+            {
+                Console.WriteLine("Питомцев нет");
+            }
+
+            Console.WriteLine("У пользователя {0} любимых цветов. Среди них:", cortege.countOfFavColors);
+            foreach (var item in cortege.favColors)
+            {
+                Console.WriteLine(item);
+            }
+
+        }
+
+
+
+
+
 
         static int Sum()
         {
